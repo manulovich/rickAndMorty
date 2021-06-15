@@ -1,0 +1,17 @@
+{
+  "name": "rickAndMorty",
+  "version": "1.0.0",
+  "description": "api rick and morty",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel public/index.html --open --host 192.168.43.240",
+    "buid": "parcel buid public/index.html"
+  },
+  "keywords": [],
+  "author": "manulovich",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.3.2"
+  }
+}

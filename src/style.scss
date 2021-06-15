@@ -1,0 +1,83 @@
+@import './styles/reset';
+
+//main setting
+html {
+    font-size: 14px;
+}
+
+:root {
+    --link-color: #FAFD7CFF;
+    --person-bg-color: #FAFD7CFF;
+    --person-text-color: #24325FFF;
+}
+
+.wrapper {
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    
+    font-family: sans-serif;
+
+    background: url('../src/assets/background/main-bg.webp') center center no-repeat;
+    background-size: cover;
+
+    .main {
+        flex: 1 1 0;
+    }
+}
+
+.container {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+// ---------
+
+//main
+
+
+//persons
+
+
+//person
+
+
+//footer
+.footer {
+    background-color: rgba(255, 255, 255, .1);
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, .2);
+}
+
+.nav-pagination {
+    font-size: 1.5em;
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        margin: 0 -10px;
+    }
+
+    &__list-item {
+        margin: 0 10px;
+        padding: 5px;
+        transition: .3s;
+
+        a {
+            color: var(--link-color);
+        }
+
+        a:focus,
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: var(--link-color);
+        }
+    }
+}
+
+
+
+//modal
+.modal--disabled {
+    display: none;
+}
