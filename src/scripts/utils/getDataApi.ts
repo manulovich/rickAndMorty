@@ -1,8 +1,8 @@
 const getDataApi = async (url: string) => {
     let response: Response = await fetch(url);
-    response = await response.json();
+    let data = await response.json();
 
-    return response;
+    return data;
 }
 
 export default getDataApi;
