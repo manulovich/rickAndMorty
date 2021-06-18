@@ -8,12 +8,13 @@
 
     &__page {
         padding: 10px;
-        color: #fff;
+        color: rgba(255, 255, 255, .5);
         font-weight: 700;
         font-size: 1em;
 
         &:hover,
         &:focus {
+            color: #fff;
             text-decoration: underline;
         }
     }
