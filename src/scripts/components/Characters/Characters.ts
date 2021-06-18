@@ -5,6 +5,14 @@ import Error from './../Error'
 import Person from './../../type/Person'
 
 class Characters {
+    url: string;
+    insertNode: HTMLElement;
+
+    constructor(url: string, insertNode: HTMLElement) {
+        this.url = url;
+        this.insertNode = insertNode;
+    }
+
     renderCharacters(data: Person[]) {
         let personList: string = '',
             htmlWrapper: string;
@@ -30,7 +38,7 @@ class Characters {
             </main>
         `;
 
-        CHARACTERS.insertAdjacentHTML('beforeend', htmlWrapper);
+        this.insertNode.insertAdjacentHTML('beforeend', htmlWrapper);
     }
 
     async render(page: number = 1) {
@@ -50,4 +58,4 @@ class Characters {
     }
 }
 
-export default new Characters()
+export default Characters

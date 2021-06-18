@@ -6,8 +6,6 @@ html {
 }
 
 :root {
-    --link-color: #FAFD7CFF;
-    --person-bg-color: #FAFD7CFF;
     --person-text-color: #24325FFF;
 }
 
@@ -44,62 +42,10 @@ html {
 .body-overflow-hidden {
     overflow-y: hidden;
 }
-
 // ---------
 
-
-//persons-list
-.persons-list {
-    --gap: 20px;
-    --gap-rev: -20px;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    margin: 0 var(--gap-rev);
-
-    &__person {
-        flex: 0 0 calc(25% - (var(--gap) * 2));
-        min-width: 250px;
-        margin: var(--gap);
-        cursor: pointer;
-        transition: .3s;
-
-        &:hover {
-            transform: scale(1.1);
-        }
-    }
-}
-
 //person
-.person {
-    display: flex;
-    flex-direction: column;
-
-    font-size: 1.5em;
-    background-color: var(--person-bg-color);
-
-    &__name {
-        height: calc(1em + 20px);
-        color: var(--person-text-color);
-        font-weight: 700;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        padding: 10px;
-    }
-
-    &__avatar {
-        height: 200px;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-}
+@import './scripts/components/Characters/Characters';
 
 //modal
 .modal {
