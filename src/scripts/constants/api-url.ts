@@ -1,7 +1,7 @@
-const urlCharacter: string = 'https://rickandmortyapi.com/api/character';
-const queryPage: string = '?page=';
+const URL_CHARACTER: string = 'https://rickandmortyapi.com/api/character';
+const QUERY_PAGE: string = '?page=';
 
 export {
-    urlCharacter,
-    queryPage
+    URL_CHARACTER,
+    QUERY_PAGE
 }

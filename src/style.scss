@@ -6,6 +6,7 @@ html {
 }
 
 :root {
+    --person-bg-color: #FAFD7CFF;
     --person-text-color: #24325FFF;
 }
 
@@ -20,6 +21,8 @@ html {
 
     display: flex;
     flex-direction: column;
+
+    overflow: hidden;
     
     font-family: sans-serif;
 
@@ -27,10 +30,6 @@ html {
     background-size: cover;
 
     position: relative;
-
-    .main {
-        flex: 1;
-    }
 }
 
 .container {
@@ -132,3 +131,12 @@ html {
 .modal--disabled {
     display: none;
 }
+
+//footer
+.footer {
+    margin: auto 0 0 0;
+    background-color: rgba(0, 0, 0, .4);
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, .4);
+}
+
+@import './scripts/components/Pagination/Pagination'

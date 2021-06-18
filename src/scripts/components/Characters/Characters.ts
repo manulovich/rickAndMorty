@@ -1,19 +1,15 @@
-import { urlCharacter, queryPage } from './../../constants/api-url'
-import { CHARACTERS } from '../../constants/root'
 import getDataApi from './../../utils/getDataApi'
 import Error from './../Error'
 import Person from './../../type/Person'
 
 class Characters {
-    url: string;
     insertNode: HTMLElement;
 
-    constructor(url: string, insertNode: HTMLElement) {
-        this.url = url;
+    constructor(insertNode: HTMLElement) {
         this.insertNode = insertNode;
     }
 
-    renderCharacters(data: Person[]) {
+    private renderCharacters(data: Person[]) {
         let personList: string = '',
             htmlWrapper: string;
 
@@ -41,16 +37,11 @@ class Characters {
         this.insertNode.insertAdjacentHTML('beforeend', htmlWrapper);
     }
 
-    async render(page: number = 1) {
+    async render(url: string) {
         let data;
 
         try {
-            data = await getDataApi(
-                urlCharacter +
-                queryPage +
-                page.toString()
-            );
-
+            data = await getDataApi(url);
             this.renderCharacters(data.results);
         } catch {
             Error.render();
