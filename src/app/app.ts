@@ -15,15 +15,20 @@ class App {
         this.modal = modal;
     }
 
-    eventListener() {
+    private buttonEventListener() {
         const buttons: Element[] = [...this.pagination.insertNode.children[0].children];
-        const characters: Element[] = [...this.characters.insertNode.children[0].children]
 
         for (let button of buttons) {
             button.addEventListener('click', () => {
-                this.characters.render(URL_CHARACTER + '/'+ QUERY_PAGE + button.innerHTML);
+                this.characters.render(URL_CHARACTER + '/'+ QUERY_PAGE + button.innerHTML).then(() => {
+                    this.characterEventListener();
+                })
             })
         }
+    }
+
+    private characterEventListener() {
+        const characters: Element[] = [...this.characters.insertNode.children[0].children]
 
         for (let character of characters) {
             character.addEventListener('click', () => {
@@ -33,6 +38,20 @@ class App {
                 parentNode.classList.toggle('modal--disabled')
             })
         }
+    }
+
+    private modalEventListener() {
+        const modalParentNode: any = this.modal.insertNode.parentNode;
+
+        modalParentNode.children[0].addEventListener('click', () =>  {
+            modalParentNode.classList.toggle('modal--disabled');
+        })
+    }
+
+    eventListener() {
+        this.buttonEventListener();
+        this.characterEventListener();
+        this.modalEventListener();
     }
 
     async render() {
