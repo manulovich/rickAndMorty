@@ -1,16 +1,9 @@
-import Error from '../Error'
+import ApiComponent from '../ApiComponent';
+import PageError from '../PageError'
 import getDataApi from '../../utils/getDataApi'
 
-class Pagination {
-    url: string;
-    insertNode: HTMLElement;
-
-    constructor(url: string, insertNode: HTMLElement) {
-        this.url = url;
-        this.insertNode = insertNode;
-    }
-
-    private paginationRender(countPages: number) {
+class Pagination extends ApiComponent {
+    _renderComponent(countPages: number) {
         let pagination: string = '',
             htmlWrapper: string;
 
@@ -32,15 +25,14 @@ class Pagination {
         this.insertNode.insertAdjacentHTML('beforeend', htmlWrapper);
     }
 
-    async render() {
+    async render(url: string) {
         let data;
 
         try {
-            data = await getDataApi(this.url);
-            data = data.info.pages;
-            this.paginationRender(data);
+            data = await getDataApi(url);
+            this._renderComponent(data.info.pages);
         } catch {
-            Error.render();
+            PageError.render();
         }
     }
 }

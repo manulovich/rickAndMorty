@@ -1,15 +1,10 @@
+import ApiComponent from '../ApiComponent'
 import getDataApi from './../../utils/getDataApi'
-import Error from './../Error'
+import PageError from '../PageError'
 import Person from './../../type/Person'
 
-class Characters {
-    insertNode: HTMLElement;
-
-    constructor(insertNode: HTMLElement) {
-        this.insertNode = insertNode;
-    }
-
-    private renderCharacters(data: Person[]) {
+class Characters extends ApiComponent {
+    _renderComponent(data: Person[]) {
         let personList: string = '',
             htmlWrapper: string;
 
@@ -25,27 +20,12 @@ class Characters {
         });
 
         htmlWrapper = `
-            <main class="main">
-                <div class="container" id="js-insert-point">
-                    <ul class="persons-list">
-                        ${personList}
-                    </ul>
-                </div>
-            </main>
+            <ul class="persons-list">
+                ${personList}
+            </ul>
         `;
 
         this.insertNode.insertAdjacentHTML('beforeend', htmlWrapper);
-    }
-
-    async render(url: string) {
-        let data;
-
-        try {
-            data = await getDataApi(url);
-            this.renderCharacters(data.results);
-        } catch {
-            Error.render();
-        }
     }
 }
 
