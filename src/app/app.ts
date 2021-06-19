@@ -34,8 +34,8 @@ class App {
             character.addEventListener('click', () => {
                 const parentNode: any = this.modal.insertNode.parentNode;
                 const id: string = character.getAttribute('data-id');
-                this.modal.render(URL_CHARACTER + '/' + id)
-                parentNode.classList.toggle('modal--disabled')
+                this.modal.render(URL_CHARACTER + '/' + id);
+                parentNode.classList.remove('modal--disabled')
             })
         }
     }
