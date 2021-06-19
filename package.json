@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "parcel public/index.html --open",
-    "buid": "parcel buid public/index.html"
+    "build": "parcel build public/index.html"
   },
   "keywords": [],
   "author": "manulovich",
