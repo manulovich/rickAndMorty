@@ -4,13 +4,17 @@ import PageError from '../PageError'
 import Person from './../../type/Person'
 
 class Characters extends ApiComponent {
+    eventListener() {
+
+    }
+
     _renderComponent(data: Person[]) {
         let personList: string = '',
             htmlWrapper: string;
 
-        data.forEach(({name, image}) => {
+        data.forEach(({name, image, id}) => {
             personList += `
-                <li class="persons-list__person person">
+                <li class="persons-list__person person" data-id=${id}>
                     <span class="person__name" title=${name}>${name}</span>
                     <span class="person__avatar">
                         <img src="${image}" alt="${name}">
@@ -25,6 +29,7 @@ class Characters extends ApiComponent {
             </ul>
         `;
 
+        this.insertNode.innerHTML = '';
         this.insertNode.insertAdjacentHTML('beforeend', htmlWrapper);
     }
 }

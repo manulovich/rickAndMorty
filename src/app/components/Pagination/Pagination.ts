@@ -14,10 +14,8 @@ class Pagination extends ApiComponent {
         }
 
         htmlWrapper = `
-            <div class="container">
-                <div class="pagination">
-                    ${pagination}
-                </div>
+            <div class="pagination">
+                ${pagination}
             </div>
         `;
 

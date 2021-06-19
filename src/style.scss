@@ -48,16 +48,16 @@ html {
 // ---------
 
 //person
-@import './scripts/components/Characters/Characters';
+@import './app/components/Characters/Characters.scss';
 
 //modal
-@import './scripts/components/Modal/Modal';
+@import './app/components/Modal/Modal';
 
 //notification
-@import './scripts/components/PageNotification/PageNotification';
+@import './app/components/PageNotification/PageNotification';
 
 //page-error
-@import './scripts/components/PageError/PageError';
+@import './app/components/PageError/PageError';
 
 //footer
 .footer {
@@ -65,4 +65,4 @@ html {
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, .4);
 }
 
-@import './scripts/components/Pagination/Pagination'
+@import './app/components/Pagination/Pagination'
