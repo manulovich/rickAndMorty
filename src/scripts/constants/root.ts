@@ -1,11 +1,11 @@
 const CHARACTERS: HTMLElement = document.getElementById('js-characters');
-const INFO: HTMLElement = document.getElementById('js-all-character-info');
+const MODAL_CONTENT: HTMLElement = document.getElementById('js-modal-insert');
 const PAGINATION: HTMLElement = document.getElementById('js-pagination');
 const ERROR: HTMLElement = document.getElementById('js-error');
 
 export {
     CHARACTERS,
-    INFO,
+    MODAL_CONTENT,
     PAGINATION,
     ERROR
 }
