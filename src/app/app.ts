@@ -20,7 +20,7 @@ class App {
 
         for (let button of buttons) {
             button.addEventListener('click', () => {
-                this.characters.render(URL_CHARACTER + '/'+ QUERY_PAGE + button.innerHTML).then(() => {
+                this.characters.render(URL_CHARACTER + QUERY_PAGE + button.innerHTML).then(() => {
                     this.characterEventListener();
                 })
             })
